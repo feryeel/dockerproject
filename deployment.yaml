@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: feriel
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: feriel
+  template:
+    metadata:
+      labels:
+        app: feriel
+    spec:
+      containers:
+      - name: firstconteneur
+        image: feriel:latest
+        ports:
+        - containerPort: 2241
